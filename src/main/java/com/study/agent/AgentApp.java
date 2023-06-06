@@ -42,7 +42,7 @@ public class AgentApp {
                 if (c.isInterface() ||c.isAnnotation() ||c.isArray() ||c.isEnum()){
                     continue;
                 }
-                if (c.getName().equals("com.study.agent.MainRun")) {
+                if (c.getName().equals("com.study.agent.PreMain")) {
                     try {
                         System.out.println("retransformClasses start, class: " + c.getName());
                         /*
@@ -79,7 +79,7 @@ public class AgentApp {
                 ProtectionDomain protectionDomain,
                 byte[] classfileBuffer) throws IllegalClassFormatException {
             // 对指定类的方法实现增强
-            if (className.contains("MainRun")) {
+            if (className.contains("PreMain")) {
                 try {
                     final String loadName = className.replaceAll("/", ".");
                     final CtClass ctClass = ClassPool.getDefault().get(loadName);
