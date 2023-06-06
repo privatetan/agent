@@ -18,8 +18,8 @@ public class AgentApp {
     /**
      * 静态加载
      * 
-     * @param args
-     * @param inst
+     * @param args String
+     * @param inst Instrumentation
      */
     public static void premain(String args, Instrumentation inst) {
         System.out.println("premain start");
@@ -30,8 +30,8 @@ public class AgentApp {
     /**
      * 动态加载
      *
-     * @param args
-     * @param inst
+     * @param args String
+     * @param inst Instrumentation
      */
     public static void agentmain(String args, Instrumentation inst) {
         System.out.println("agentmain start");

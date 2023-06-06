@@ -5,6 +5,13 @@ import com.sun.tools.attach.VirtualMachineDescriptor;
 
 import java.util.List;
 
+/**
+ * agent,动态加载，测试类
+ * <p>
+ * 测试步骤
+ * 1. 首先启动 PreMain 测试类。
+ * 2. 然后启动 AgentMain 测试类即可。
+ */
 public class AgentMain {
     public static void main(String[] args) throws Exception {
         List<VirtualMachineDescriptor> listBefore = VirtualMachine.list();
