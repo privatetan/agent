@@ -6,6 +6,7 @@ import java.lang.instrument.Instrumentation;
 import java.lang.instrument.UnmodifiableClassException;
 import java.security.ProtectionDomain;
 
+import com.study.agent.component.MonitorClassFileTransformer;
 import javassist.ClassPool;
 import javassist.CtClass;
 import javassist.CtMethod;
@@ -24,7 +25,7 @@ public class AgentApp {
     public static void premain(String args, Instrumentation inst) {
         System.out.println("premain start");
         System.out.println(args);
-        inst.addTransformer(new AgentInstrumentation());
+        inst.addTransformer(new MonitorClassFileTransformer());
     }
 
     /**
